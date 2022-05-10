@@ -63,5 +63,14 @@ public class CreditPageTest {
         start.fillValidForm(requiredFields);
         start.getValidInfo();
     }
+
+    @Test
+    public void incompleteCard() {
+        var login = open("http://localhost:8080", DashboardPage.class);
+        var requiredFields = DataHelper.getIncompleteCard();
+        var start = login.goToDebitPayment();
+        start.fillIncompleteCard(requiredFields);
+        start.getInvalidInfo();
+    }
 }
 

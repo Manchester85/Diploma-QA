@@ -44,6 +44,15 @@ public class PaymentPage {
         button.click();
     }
 
+    public void fillIncompleteCard (DataHelper.RequiredFields getIncompleteCard) {
+        card.setValue(getIncompleteCard.getCard());
+        month.setValue(getIncompleteCard.getMonth());
+        year.setValue(getIncompleteCard.getYear());
+        name.setValue(getIncompleteCard.getName());
+        cvv.setValue(getIncompleteCard.getCvv());
+        button.click();
+    }
+
     public void getValidInfo () {
         goodPay.shouldBe(visible, Duration.ofSeconds(15));
     }

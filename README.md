@@ -17,8 +17,7 @@
 
 ### Для переключения базы данных на MySQL:
 
-включить SUT командой
-java -jar aqa-shop.jar -P:jdbc.url=jdbc:mysql://localhost:3366/app -P:jdbc.user=app -P:jdbc.password=pass
+включить SUT командой java -jar aqa-shop.jar -P:jdbc.url=jdbc:mysql://localhost:3366/app -P:jdbc.user=app -P:jdbc.password=pass
 
 запустить автотесты командой
 ./gradlew clean test 

@@ -47,11 +47,15 @@ public class DataHelper {
     }
 
     public static RequiredFields getRussianName() {
-        return new RequiredFields(getCardNumber("INVALID"), generateMonth(), generateYear(), "Петя Пупкин", getCvv());
+        return new RequiredFields(getCardNumber("APPROVED"), generateMonth(), generateYear(), "Петя Пупкин", getCvv());
     }
 
     public static RequiredFields getInvalidCardNumber() {
         return new RequiredFields(getCardNumber("INVALID"), generateMonth(), generateYear(), getName(), getCvv());
+    }
+
+    public static RequiredFields getIncompleteCard() {
+        return new RequiredFields(getCardNumber("INVALID"), "**", "**", getName(), getCvv());
     }
 
     @Value
