@@ -3,11 +3,11 @@
 Общее количество тестов: 8.
 Процент успешных при запуске PostrgeSQL: 62%.
 Процент неуспешных при запуске PostgreSQL: 38%.
-**[Gradle report PostgreSQL](http://localhost:63342/GRADLE%20Diploma/GRADLE_Diploma/build/reports/tests/test/index.html?_ijt=9avpdkl5n791lkp2ighvpi32f7&_ij_reload)**.
+**[Gradle report PostgreSQL](https://drive.google.com/file/d/1d8cEI3Vd31qyP1pXV5LLCnVqkNq9K_b0/view?usp=sharing)**.
 
 Процент успешных при запуске MySQL: 25%.
 Процент неуспешных при запуске MySQL: 75%.
-**[Gradle report MySQL](http://localhost:63342/GRADLE%20Diploma/GRADLE_Diploma/build/reports/tests/test/index.html?_ijt=ss6h7npv2u4p2dbor6scasf8sr&_ij_reload)**.
+**[Gradle report MySQL](https://drive.google.com/file/d/1wQ9qGqlOkOGl_QZEo9JUuvUADkL9iNdr/view?usp=sharing)**.
 
 
 Проведённая работа выявила ряд проблем, требующих внимания:
