@@ -1,13 +1,13 @@
-### Было исполнено 16 тестов (по 8 тестов на каждую БД). ###
+### Было исполнено 24 теста (по 12 тестов на каждую БД). ###
 
-Общее количество тестов: 8.
-Процент успешных при запуске PostrgeSQL: 62%.
-Процент неуспешных при запуске PostgreSQL: 38%.
-**[Gradle report PostgreSQL](https://drive.google.com/file/d/1d8cEI3Vd31qyP1pXV5LLCnVqkNq9K_b0/view?usp=sharing)**.
+Общее количество тестов: 12.
+Процент успешных при запуске PostrgeSQL: 50%.
+Процент неуспешных при запуске PostgreSQL: 50%.
+**[Gradle report PostgreSQL](https://drive.google.com/file/d/1MUMmuxKBvmb32NnTs2RkXy01PTq9CW0o/view?usp=sharing)**.
 
-Процент успешных при запуске MySQL: 25%.
-Процент неуспешных при запуске MySQL: 75%.
-**[Gradle report MySQL](https://drive.google.com/file/d/1wQ9qGqlOkOGl_QZEo9JUuvUADkL9iNdr/view?usp=sharing)**.
+Процент успешных при запуске MySQL: 58%.
+Процент неуспешных при запуске MySQL: 42%.
+**[Gradle report MySQL](https://drive.google.com/file/d/16TQ9eccHaIfpsn4dNioFiEbm8hMJadxS/view?usp=sharing)**.
 
 
 Проведённая работа выявила ряд проблем, требующих внимания:

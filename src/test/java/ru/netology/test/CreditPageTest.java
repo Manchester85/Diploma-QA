@@ -47,16 +47,25 @@ public class CreditPageTest {
     }
 
     @Test
+    public void incompleteCard() {
+        var login = open("http://localhost:8080", DashboardPage.class);
+        var requiredFields = DataHelper.getIncompleteCard();
+        var start = login.goToDebitPayment();
+        start.fillIncompleteCard(requiredFields);
+        start.getInvalidInfo();
+    }
+
+    @Test
     public void invalidCardNumberTest() {
         var login = open("http://localhost:8080", DashboardPage.class);
         var requiredFields = DataHelper.getInvalidCardNumber();
-        var start = login.goToCreditPayment();
+        var start = login.goToDebitPayment();
         start.fillInvalidForm(requiredFields);
         start.getInvalidInfo();
     }
 
     @Test
-    public void creditTest() {
+    public void creditTestApproved() {
         var login = open("http://localhost:8080", DashboardPage.class);
         var requiredFields = DataHelper.getApprovedFields();
         var start = login.goToCreditPayment();
@@ -65,11 +74,38 @@ public class CreditPageTest {
     }
 
     @Test
-    public void incompleteCard() {
+    public void creditTestDeclined() {
+        var login = open("http://localhost:8080", DashboardPage.class);
+        var requiredFields = DataHelper.getDeclinedFields();
+        var start = login.goToCreditPayment();
+        start.fillInvalidForm(requiredFields);
+        start.getInvalidInfo();
+    }
+
+    @Test
+    public void creditRusTest() {
+        var login = open("http://localhost:8080", DashboardPage.class);
+        var requiredFields = DataHelper.getRussianName();
+        var start = login.goToCreditPayment();
+        start.fillRusForm(requiredFields);
+        start.getInvalidInfo();
+    }
+
+    @Test
+    public void creditIncompleteCard() {
         var login = open("http://localhost:8080", DashboardPage.class);
         var requiredFields = DataHelper.getIncompleteCard();
-        var start = login.goToDebitPayment();
+        var start = login.goToCreditPayment();
         start.fillIncompleteCard(requiredFields);
+        start.getInvalidInfo();
+    }
+
+    @Test
+    public void creditInvalidCardNumberTest() {
+        var login = open("http://localhost:8080", DashboardPage.class);
+        var requiredFields = DataHelper.getInvalidCardNumber();
+        var start = login.goToCreditPayment();
+        start.fillInvalidForm(requiredFields);
         start.getInvalidInfo();
     }
 }
