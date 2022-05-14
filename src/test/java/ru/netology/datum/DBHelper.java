@@ -6,6 +6,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import java.sql.DriverManager;
 
 public class DBHelper {
+
     @SneakyThrows
     public static DataHelper.StatusPayment getStatus() {
         String statusSQL = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";
@@ -13,7 +14,8 @@ public class DBHelper {
         String status = null;
         try (
                 val conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/app_db", "user", "pass")
+                        System.getProperty("db.url"), System.getProperty("db.user"), System.getProperty("db.password"))
+
         ) {
             status = runner.query(conn, statusSQL, new ScalarHandler<>());
         }

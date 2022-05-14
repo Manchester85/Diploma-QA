@@ -3,6 +3,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.datum.DataHelper;
 import ru.netology.page.DashboardPage;
@@ -18,6 +19,7 @@ public class CreditPageTest {
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
+
 
     @Test
     public void approvedTest() {

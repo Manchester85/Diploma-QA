@@ -6,9 +6,13 @@ import org.junit.jupiter.api.*;
 import ru.netology.datum.DBHelper;
 import ru.netology.datum.DataHelper;
 import ru.netology.page.DashboardPage;
+import ru.netology.page.PaymentPage;
+
 import static com.codeborne.selenide.Selenide.open;
 
 public class SQL {
+    DashboardPage dashboardPage;
+    PaymentPage paymentPage;
 
     @BeforeAll
     static void setUpAll() {
@@ -20,12 +24,17 @@ public class SQL {
         SelenideLogger.removeListener("allure");
     }
 
+    @BeforeEach
+    void setUp() {
+        dashboardPage = open("http://localhost:8080", DashboardPage.class);
+        paymentPage = dashboardPage.goToDebitPayment();
+    }
+
     @SneakyThrows
     @Test
     public void approvedTest(){
-        var login = open("http://localhost:8080", DashboardPage.class);
         var authInfo = DataHelper.getApprovedFields();
-        var start = login.goToDebitPayment();
+        var start = dashboardPage.goToDebitPayment();
         start.fillValidForm(authInfo);
         Thread.sleep(15000);
         String actual = DBHelper.getStatus().getStatus();
@@ -36,9 +45,8 @@ public class SQL {
     @SneakyThrows
     @Test
     public void declinedTest() {
-        var login = open("http://localhost:8080", DashboardPage.class);
         var authInfo = DataHelper.getDeclinedFields();
-        var start = login.goToDebitPayment();
+        var start = dashboardPage.goToDebitPayment();
         start.fillInvalidForm(authInfo);
         Thread.sleep(15000);
         String actual = DBHelper.getStatus().getStatus();
